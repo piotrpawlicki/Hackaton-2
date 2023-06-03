@@ -10,7 +10,9 @@ def enter_category(worksheets_names):
             if category >= 0  and category < len(worksheets_names):
                 break
         except TypeError:
-            category = input('Błąd typu! Wprowadź numer kategorii: ')
+            print('Błąd typu! ')
+        except :
+            print('Błąd typu!')
     return category
 
 

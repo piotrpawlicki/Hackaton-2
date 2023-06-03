@@ -1,10 +1,11 @@
-import random
 import openpyxl
 from operation_on_strings import *
 from cat_oper import *
 from print_hangman import *
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
+from colorama import Fore
+#from hangman_turtle import *
 
 
 def main():
@@ -21,23 +22,34 @@ def main():
     letters_used = []
 
     while not check_results(guess_word_list, hidden_word_list):
+        #draw_hanged_man(guess_number)
         print(hangman(guess_number))
+
         if guess_number == 7:
+            #draw_hanged_man(guess_number)
+            print(Fore.RED + hangman[7])
             break
         else:
-            print(f'Wykorzystales nastepujące litery: {letters_used}')
-
+            draw_hanged_man(guess_number)
+            ##print(f'Wykorzystales nastepujące litery: {letters_used}')
+            print(f'Wykorzystano litery : {display_set(letters_used)}')
             user_char = user_input(guess_word)
-            letters_used = used_letters(user_char, letters_used) ##wyświetlanie litery, ktére uŻytkownik uwykorzystal
-            result = check_input(user_char, guess_word_list, letters_used)
+            result = check_input(user_char, guess_word_list)
             if user_char != guess_word :
                 if result:
-                    for i in result:
+                     for i in result:
                         change_char(hidden_word_list, i , user_char)
+                        letters_used = used_letters(user_char, letters_used)
                 else:
-                    print('Spróbuj jeszcze raz')
-                    guess_number += 1
-                    print(f'To była Twoja próba numrer {guess_number}')
+                    if user_char in letters_used:
+                        print('JuŻ wykorzystałeś tą literę, wybierz inną')
+                        print(f'To była Twoja próba numer {guess_number}')
+                        letters_used = used_letters(user_char, letters_used)
+                    else:
+                        print('Spróbuj jeszcze raz')
+                        guess_number += 1
+                        print(f'To była Twoja próba numrer {guess_number}')
+                        letters_used = used_letters(user_char, letters_used)
             elif user_char == guess_word: ##wprowadzenie możliwości podania całego hasła
                 guess_word_list = hidden_word_list
                 break
