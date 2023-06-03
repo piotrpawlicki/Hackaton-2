@@ -5,7 +5,7 @@ from print_hangman import *
 from tkinter import Tk
 from tkinter.filedialog import askopenfilename
 from colorama import Fore
-#from hangman_turtle import *
+
 
 
 def main():
