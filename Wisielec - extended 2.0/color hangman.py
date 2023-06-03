@@ -1,0 +1,1 @@
+def color_hangman
