@@ -4,6 +4,7 @@
 ## Spis treści
 * [Podsumowanie](#Podsumowanie)
   * [Wisielec](#Wisielec)
+  * [Generator Nauczyciela](#Generator Nauczyciela)
 
 * [Wykorzystane_technologie](#Wykorzystane technologie)
 * [Podziękowania](#Podziękowania)
@@ -19,7 +20,12 @@ Mamy kolorowanie wisielca - przy 7mej próbie jest całkiem czerwony :)
 Dodano również wyświetlanie użytych literek
 Mamy 7 prób - tyle prób przewidziano na wyrysowanie całego wisielca. User ma możliwość odgadnicia całego słowa wcześniej. Enjoy
 
-puter lub user.
+  - ### **Generator Nauczyciela**
+
+Program pozwala na wczytanie listy uczniów i tworzy dla każdego ucznia indywidualną wiadomośc. 
+Listy uczniow są dostępne w pliku w formacie .xlsx
+Każda z klas jest w osobnym worksheecie (ktory nosi nazwę tej klasy)
+
 ## Wykorzystane technologie
 - Python 3.9.13
 - PyCharm 2023.1
